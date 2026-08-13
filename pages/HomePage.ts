@@ -29,9 +29,9 @@ export class HomePage {
   }
 
   async searchHotel(name: string): Promise<void> {
-    await this.page.locator(this.searchInput).click();
-    await this.page.locator(this.searchInput).fill(name);
-    await this.page.locator(this.searchSuggestion).first().waitFor({ state: 'visible' });
+    const searchEl = this.page.locator(this.searchInput);
+    await searchEl.click();
+    await searchEl.fill(name);
     await this.page.locator(this.searchSuggestion).first().click();
   }
 

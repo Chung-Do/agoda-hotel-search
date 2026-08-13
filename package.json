@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Chung-Do/agoda-hotel-search.git"

@@ -11,7 +11,7 @@ export class SearchResultsPage {
     this.page = page;
   }
 
-  async clickFirstAvailableResult(): Promise<Page> {
+  async openFirstResult(): Promise<Page> {
     await this.page.locator(this.hotelList).waitFor({ state: 'visible' });
 
     const firstItem = this.page.locator(this.hotelList).locator(this.hotelItem).first();
