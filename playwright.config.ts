@@ -10,7 +10,6 @@ export default defineConfig({
   use: {
     baseURL: 'https://www.agoda.com',
     headless: false,
-    slowMo: 500,
     actionTimeout: 60_000,
     navigationTimeout: 60_000,
     trace: 'on-first-retry',

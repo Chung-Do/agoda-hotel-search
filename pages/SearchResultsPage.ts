@@ -3,8 +3,9 @@ import { Page } from '@playwright/test';
 export class SearchResultsPage {
   private readonly page: Page;
 
-  private readonly hotelList = 'ol.hotel-list-container';
-  private readonly hotelItem = '[data-selenium="hotel-item"]';
+  private readonly hotelList        = 'ol.hotel-list-container';
+  private readonly hotelItem        = '[data-selenium="hotel-item"]';
+  private readonly propertyNameLink = '[data-testid="property-name-link"]';
 
   constructor(page: Page) {
     this.page = page;
@@ -17,7 +18,7 @@ export class SearchResultsPage {
 
     const [newPage] = await Promise.all([
       this.page.context().waitForEvent('page'),
-      firstItem.locator('[data-testid="property-name-link"]').click(),
+      firstItem.locator(this.propertyNameLink).click(),
     ]);
 
     await newPage.waitForLoadState('domcontentloaded');
